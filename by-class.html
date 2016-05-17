@@ -1,0 +1,65 @@
+<html>
+<head>
+	<script src="https://cc-cdn.com/generic/scripts/v1/cc_c2a.min.js"></script>
+	<style>
+		form{
+			padding: 40px;
+			width: 600px;
+			margin: auto;
+		}
+		input{
+			width: 100%;
+			margin: 0.5em 0px;
+			padding: 4px;
+		}
+	</style>
+</head>
+<body>
+<form>
+	<h2>Element selection by Class Example</h2>
+	<div class="form-control">
+		<label>Search Input</label>
+		<input class="search"/>
+	</div>
+	<div class="form-control">
+		<label>Address Line #1</label>
+		<input class="addr_line_1"/>
+	</div>
+	<div class="form-control">
+		<label>Address Line #2</label>
+		<input class="addr_line_2"/>
+	</div>
+	<div class="form-control">
+		<label>Zip / Post code</label>
+		<input class="zipcode"/>
+	</div>
+	<div class="form-control">
+		<label>Town</label>
+		<input class="town"/>
+	</div>
+	<div class="form-control">
+		<label>State / County</label>
+		<input class="county"/>
+	</div>
+	<div class="form-control">
+		<label>Country</label>
+		<input class="country"/>
+	</div>
+
+	<script>
+		new clickToAddress({
+			accessToken: 'xxxxx-xxxxx-xxxxx-xxxxx',
+			domMode: 'class',
+			dom: {
+				search:		'search',
+				town:		'town',
+				postcode:	'zipcode',
+				county:		'county',
+				country:	'country',
+				line_1:		'addr_line_1',
+				line_2:		'addr_line_2'
+			}
+		});
+	</script>
+</body>
+</html>

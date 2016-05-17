@@ -1,0 +1,108 @@
+<html>
+<head>
+	<script src="https://cc-cdn.com/generic/scripts/v1/cc_c2a.min.js"></script>
+	<style>
+		form{
+			padding: 40px;
+			width: 600px;
+			margin: auto;
+		}
+		input{
+			width: 100%;
+			margin: 0.5em 0px;
+			padding: 4px;
+		}
+	</style>
+</head>
+<body>
+<form>
+	<h2>Two-Forms Example</h2>
+	<h3>Billing Address</h3>
+	<div class="form-control">
+		<label>Search Input</label>
+		<input name="form_1_search"/>
+	</div>
+	<div class="form-control">
+		<label>Address Line #1</label>
+		<input name="form_1_addr_line_1"/>
+	</div>
+	<div class="form-control">
+		<label>Address Line #2</label>
+		<input name="form_1_addr_line_2"/>
+	</div>
+	<div class="form-control">
+		<label>Zip / Post code</label>
+		<input name="form_1_zipcode"/>
+	</div>
+	<div class="form-control">
+		<label>Town</label>
+		<input name="form_1_town"/>
+	</div>
+	<div class="form-control">
+		<label>State / County</label>
+		<input name="form_1_county"/>
+	</div>
+	<div class="form-control">
+		<label>Country</label>
+		<input name="form_1_country"/>
+	</div>
+</form>
+
+<form>
+	<h3>Shipping Address</h3>
+	<div class="form-control">
+		<label>Search Input</label>
+		<input name="form_2_search"/>
+	</div>
+	<div class="form-control">
+		<label>Address Line #1</label>
+		<input name="form_2_addr_line_1"/>
+	</div>
+	<div class="form-control">
+		<label>Address Line #2</label>
+		<input name="form_2_addr_line_2"/>
+	</div>
+	<div class="form-control">
+		<label>Zip / Post code</label>
+		<input name="form_2_zipcode"/>
+	</div>
+	<div class="form-control">
+		<label>Town</label>
+		<input name="form_2_town"/>
+	</div>
+	<div class="form-control">
+		<label>State / County</label>
+		<input name="form_2_county"/>
+	</div>
+	<div class="form-control">
+		<label>Country</label>
+		<input name="form_2_country"/>
+	</div>
+</form>
+
+	<script>
+		var cc_object = new clickToAddress({
+			accessToken: 'xxxxx-xxxxx-xxxxx-xxxxx',
+		});
+		cc_object.attach({
+				search:		'form_1_search',
+				town:		'form_1_town',
+				postcode:	'form_1_zipcode',
+				county:		'form_1_county',
+				country:	'form_1_country',
+				line_1:		'form_1_addr_line_1',
+				line_2:		'form_1_addr_line_2'
+		});
+
+		cc_object.attach({
+				search:		'form_2_search',
+				town:		'form_2_town',
+				postcode:	'form_2_zipcode',
+				county:		'form_2_county',
+				country:	'form_2_country',
+				line_1:		'form_2_addr_line_1',
+				line_2:		'form_2_addr_line_2'
+		});
+	</script>
+</body>
+</html>

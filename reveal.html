@@ -1,0 +1,73 @@
+<html>
+<head>
+	<script src="https://cc-cdn.com/generic/scripts/v1/cc_c2a.min.js"></script>
+	<style>
+		form{
+			padding: 40px;
+			width: 600px;
+			margin: auto;
+		}
+		input{
+			width: 100%;
+			margin: 0.5em 0px;
+			padding: 4px;
+		}
+		.hidden{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<form>
+	<h2>Reveal Example</h2>
+	<div class="form-control">
+		<label>Search Input</label>
+		<input name="search"/>
+	</div>
+	<div class="form-control hidden">
+		<label>Address Line #1</label>
+		<input name="addr_line_1"/>
+	</div>
+	<div class="form-control hidden">
+		<label>Address Line #2</label>
+		<input name="addr_line_2"/>
+	</div>
+	<div class="form-control hidden">
+		<label>Zip / Post code</label>
+		<input name="zipcode"/>
+	</div>
+	<div class="form-control hidden">
+		<label>Town</label>
+		<input name="town"/>
+	</div>
+	<div class="form-control hidden">
+		<label>State / County</label>
+		<input name="county"/>
+	</div>
+	<div class="form-control hidden">
+		<label>Country</label>
+		<input name="country"/>
+	</div>
+
+	<script>
+		new clickToAddress({
+			accessToken: 'xxxxx-xxxxx-xxxxx-xxxxx',
+			dom: {
+				search:		'search',
+				town:		'town',
+				postcode:	'zipcode',
+				county:		'county',
+				country:	'country',
+				line_1:		'addr_line_1',
+				line_2:		'addr_line_2'
+			},
+			onResultSelected: function(object, dom, result){
+				var hidden_elements = document.getElementsByClassName('hidden');
+				while(hidden_elements.length > 0){
+					hidden_elements[0].className = 'form-control';
+				}
+			}
+		});
+	</script>
+</body>
+</html>
